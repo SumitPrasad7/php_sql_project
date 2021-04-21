@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <title>Login</title>
+    <link rel = "icon" type = "image/png" href = "images/home.jpg">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function nohome()
+        {
+            alert("Please Login First");
+            return false;
+        }
+    </script>
+</HEAD>
+
+<body>
+
+    <div class="nav-bar">
+        
+        <div class="menu-right">
+        <ul>
+            
+            <li><img src="images/home.png"><a href="Login.html" onclick="nohome()">Home</a></li>
+            <li><img src="images/contact.png"><a href="contact.html">Contact Us</a></li>
+        </ul>
+     </div>
+    </div>
+
+    <H3 style="color:teal; ">
+        <Centre>Login Here.
+    </H3>
+    <div class="container">
+    <form method="POST" action="login.php">
+        <table>
+            <tr>
+                <td>Email_Id:</td>
+                <td> <input type="text" name="Email_Id" placeholder="Enter your email-id"></td>
+            </tr>
+            <tr>
+                <td> Password:</td>
+                <td><input type="password" name="Password" placeholder="Enter your password"></td>
+            <tr>
+                <td colspan="2"><input type="submit" name="submit" placeholder="Press Enter To Login" style="background-color:green;color:white;font-weight: bold;width:auto;"></td>
+            </tr>
+            <tr>
+            <td>
+                Don't have account? <a href="Register.html">Register Here</a></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</body>
+
+</HTML>

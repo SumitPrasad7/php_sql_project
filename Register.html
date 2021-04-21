@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tech World Registration</title>
+  <link rel = "icon" type = "image/png" href = "images/home.jpg">
+  <link rel="stylesheet" href="style.css" />
+  
+  <script>
+        function nohome()
+        {
+            alert("Please Login First");
+            return false;
+        }
+  
+    function verify() {
+      var y = document.forms["Register"]["emailid"].value;
+      var x = document.forms["Register"]["name"].value;
+      var z = document.forms["Register"]["Password"].value;
+      var pw = document.getElementById("pwd").value;
+      var cpw = document.getElementById("cpwd").value;
+
+      var edu10= document.forms["Register"]["edu_10"].value;
+      var edu12= document.forms["Register"]["edu_12"].value;
+      var grad= document.forms["Register"]["grad"].value;
+      //var image= document.forms["Register"]["image"].value;
+
+      
+
+
+      //blank details verification
+      if (x == "" || y == "" || z == "" ||pw == "" ||cpw == "" ||edu10 ==""||edu12 == "" ||grad == "") {
+        //document.getElementById("message2").innerHTML = "Please fill all the Details";
+        alert("Please fill all the details");
+        return false;
+      }
+
+      //email verification
+      if (y == '' || y.indexOf('@') == -1 || y.indexOf('.') == -1) {
+        document.getElementById("messageE").innerHTML = "Please enter a valid email id.";
+        return false;
+
+      }
+    
+      
+
+      
+      //check empty password field  
+      if (pw == "") {
+        document.getElementById("message").innerHTML = "**Fill the password please!";
+        return false;
+      }
+
+      //minimum password length validation  
+      if (pw.length < 8) {
+        document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+        return false;
+      }
+      //matching both the passwords
+      if (pw != cpw) {
+        document.getElementById("message2").innerHTML = "Password doesn't match.";
+        return false;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="nav-bar">
+        
+    <div class="menu-right">
+    <ul>
+        
+        <li><img src="images/home.png"><a href="Login.html">Home</a> </li>
+        <li><img src="images/contact.png"><a href="home.html">Contact Us</a></li>
+        <li><img src="images/loginkk.jpg"><a href="Login.html">Login</a></li>
+    </ul>
+ </div>
+</div>
+  <div class="container">
+    <form name="Register" method="POST" action="Register1.php" onsubmit="return verify()">
+        <table>
+            <tr>
+                <th colspan="2"><u>Register</u></th>
+            </tr>
+
+            <tr>
+                <td> Name :</td>
+                <td><input type="text" name="name"> </td>
+            </tr>
+
+            <tr>
+                <td>Email :</td>
+                <td><input type="text" name="emailid"> <span id="messageE" style="color:red" style="font-size: small;">
+                    </span></td>
+            </tr>
+
+
+            <tr>
+                <td>Password :</td>
+                <td><input type="Password" name="Password" id="pwd"> <span id="message" style="color:red"
+                        style="font-size: small;"> </span></td>
+
+            </tr>
+
+            <tr>
+                <td>Confirm Password :</td>
+                <td><input type="Password" name="cpassword" id="cpwd">
+                    <span id="message2" style="color:red"> </span>
+                </td>
+            </tr>    
+            <tr> <td colspan="2" style="color:darkgreen;text-align:center">Educational Details :</td> </tr>
+
+            <tr>
+                <td>Matric School Name :</td>
+                <td><input type="text" name="edu_10"></td>
+            </tr>
+
+            <tr>
+                <td>SSC School Name :</td>
+                <td><input type="text" name="edu_12"></td>
+            </tr>
+            <tr>
+                <td>Graduation College :</td>
+                <td><input type="text" name="grad"></td>
+            </tr>
+
+            
+
+            <tr>
+                <td>Upload Image :</td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-left:25px;"><input type="submit"  onclick="message()" name="Register" style="background-color:green;color:white;font-weight: bold;height:30px;width:130px;"></td>
+            </tr>
+
+        </table>
+    </form>
+  </div>
+</body>
+
+</html>
